@@ -23,7 +23,6 @@ const AddProfile = () => {
   // post data
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
 
     try {
       const response = await fetch("http://localhost:7000/users", {
@@ -37,6 +36,10 @@ const AddProfile = () => {
     } catch (error) {
       console.error("Error submitting form:", error);
     }
+    console.log(formData);
+    alert("profile added");
+    // formData.reset();
+    location.reload();
   };
 
   return (
@@ -61,6 +64,7 @@ const AddProfile = () => {
                     type='text'
                     id='name'
                     name='name'
+                    value={formData.name}
                     required
                     placeholder='type your name'
                     className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
