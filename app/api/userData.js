@@ -1,5 +1,7 @@
 export async function userData() {
-  const res = await fetch("http://localhost:7000/users", { cache: "no-store" });
+  const res = await fetch("https://saad-book-server.onrender.com/users/", {
+    cache: "no-store",
+  });
   const data = await res.json();
 
   return data;

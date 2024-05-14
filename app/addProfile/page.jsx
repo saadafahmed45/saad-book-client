@@ -25,13 +25,17 @@ const AddProfile = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:7000/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://saad-book-server.onrender.com/users/",
+        {
+          // mode: "no-cors",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       // Handle response accordingly
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -48,7 +52,7 @@ const AddProfile = () => {
         <div className='container px-5 py-10 mx-auto'>
           <div className='flex flex-col text-center w-full mb-12'>
             <h1 className='sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900'>
-              Add Profile
+              Add User
             </h1>
           </div>
 
@@ -124,7 +128,7 @@ const AddProfile = () => {
                 <button
                   type='submit'
                   className='flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg'>
-                  Button
+                  Add user
                 </button>
               </div>
 

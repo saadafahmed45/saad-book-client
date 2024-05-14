@@ -6,17 +6,16 @@ const UpdateUser = ({ params }) => {
 
   const [users, setUser] = useState([]);
 
-  const { _id, name } = users;
+  const { _id, name, email, age, number } = users;
 
   useEffect(() => {
-    fetch(`http://localhost:7000/users/${id}`)
+    fetch(`https://saad-book-server.onrender.com/users/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
         // console.log("data here", data);
       });
   }, []);
-
 
   // state manegmant
   const [formData, setFormData] = useState({
@@ -42,13 +41,16 @@ const UpdateUser = ({ params }) => {
     console.log(formData);
 
     try {
-      const response = await fetch(`http://localhost:7000/users/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `https://saad-book-server.onrender.com/users/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       // Handle response accordingly
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -65,8 +67,6 @@ const UpdateUser = ({ params }) => {
               <h1 className='sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900'>
                 Update User Profile
               </h1>
-              <h2>id:{id}</h2>
-              <h2>Name: {name}</h2>
             </div>
 
             <form onSubmit={handleSubmit} className='lg:w-1/2 md:w-2/3 mx-auto'>
@@ -84,7 +84,7 @@ const UpdateUser = ({ params }) => {
                       id='name'
                       name='name'
                       required
-                      placeholder='type your name'
+                      placeholder={name}
                       className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                     />
                   </div>
@@ -101,7 +101,7 @@ const UpdateUser = ({ params }) => {
                       type='email'
                       id='email'
                       name='email'
-                      placeholder='type your email'
+                      placeholder={email}
                       className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                     />
                   </div>
@@ -118,7 +118,7 @@ const UpdateUser = ({ params }) => {
                       type='text'
                       id='age'
                       name='age'
-                      placeholder='type your age'
+                      placeholder={age}
                       className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                     />
                   </div>
@@ -135,7 +135,7 @@ const UpdateUser = ({ params }) => {
                       type='number'
                       id='number'
                       name='number'
-                      placeholder='type your number'
+                      placeholder={number}
                       className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                     />
                   </div>
@@ -144,7 +144,7 @@ const UpdateUser = ({ params }) => {
                   <button
                     type='submit'
                     className='flex mx-auto text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg'>
-                    Button
+                    Update
                   </button>
                 </div>
 

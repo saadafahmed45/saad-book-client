@@ -9,7 +9,7 @@ const ManegUser = () => {
 
   const [users, setUser] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:7000/users")
+    fetch("https://saad-book-server.onrender.com/users/")
       .then((res) => res.json())
       .then((data) => setUser(data));
   }, []);
@@ -19,7 +19,7 @@ const ManegUser = () => {
   const handleDelete = (_id) => {
     console.log("dlt", _id);
 
-    fetch(`http://localhost:7000/users/${_id}`, {
+    fetch(`https://saad-book-server.onrender.com/users/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

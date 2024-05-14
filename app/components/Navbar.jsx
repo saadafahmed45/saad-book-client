@@ -25,10 +25,10 @@ const Navbar = () => {
               HOME
             </Link>
             <Link href={"/addProfile"} className='mr-5 hover:text-gray-900'>
-              Add Profile
+              Add User
             </Link>
             <Link href={"/profile"} className='mr-5 hover:text-gray-900'>
-              PROFILE
+              Users
             </Link>
             <Link href={"/mangeUser"} className='mr-5 hover:text-gray-900'>
               Manege User
