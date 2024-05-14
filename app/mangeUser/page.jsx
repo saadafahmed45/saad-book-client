@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { userData } from "../api/userData";
-import UserDelete from "../components/userDelete";
 
 const ManegUser = () => {
   // const users = await userData();
