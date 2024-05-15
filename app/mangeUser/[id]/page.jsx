@@ -81,8 +81,10 @@ const UpdateUser = ({ params }) => {
                     <input
                       onChange={handleChange}
                       type='text'
+                      // value={formData.name}
                       id='name'
                       name='name'
+                      defaultValue={name}
                       required
                       placeholder={name}
                       className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
@@ -101,7 +103,8 @@ const UpdateUser = ({ params }) => {
                       type='email'
                       id='email'
                       name='email'
-                      placeholder={email}
+                      defaultValue={email}
+                      // placeholder={email}
                       className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                     />
                   </div>
@@ -118,7 +121,8 @@ const UpdateUser = ({ params }) => {
                       type='text'
                       id='age'
                       name='age'
-                      placeholder={age}
+                      defaultValue={age}
+                     
                       className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                     />
                   </div>
@@ -135,7 +139,9 @@ const UpdateUser = ({ params }) => {
                       type='number'
                       id='number'
                       name='number'
-                      placeholder={number}
+                      // placeholder={number}
+                      defaultValue={number}
+
                       className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-blue-500 focus:bg-white focus:ring-2 focus:ring-blue-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out'
                     />
                   </div>
