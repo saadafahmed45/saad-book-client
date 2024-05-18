@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const AddProfile = () => {
   // state manegmant
@@ -41,8 +43,14 @@ const AddProfile = () => {
       console.error("Error submitting form:", error);
     }
     console.log(formData);
-    alert("profile added");
-    // formData.reset();
+
+    Swal.fire({
+      title: "Added",
+      text: "Your User has added!",
+      icon: "success",
+    });
+
+    formData.reset();
     location.reload();
   };
 
