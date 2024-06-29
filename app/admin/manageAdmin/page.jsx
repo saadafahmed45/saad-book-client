@@ -9,6 +9,39 @@ const ManageAdmin = () => {
     email: "",
 
     // Add more fields as needed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
   });
   //  funtion for state magane data
 
